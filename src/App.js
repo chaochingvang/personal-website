@@ -6,6 +6,7 @@ import Resume from "./components/Resume";
 import Navbar from "./components/Navbar";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
+import Skills from "./components/Skills";
 
 import "./App.css";
 import { ThemeProvider, StyledEngineProvider, createTheme } from '@mui/material/styles';
@@ -38,6 +39,9 @@ function App() {
             </Route>
             <Route exact path="/portfolio">
               <Portfolio />
+            </Route>
+            <Route exact path="/skills">
+              <Skills/>
             </Route>
             <Route exact path="/contact">
               <Contact />

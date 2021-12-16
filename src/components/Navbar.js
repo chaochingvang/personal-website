@@ -55,7 +55,7 @@ const menuItems = [
   { listIcon: <Home />, listText: "Home", listPath: "/" },
   { listIcon: <AssignmentInd />, listText: "Resume", listPath: "/resume" },
   { listIcon: <Apps />, listText: "Portfolio", listPath: "/portfolio" },
-  { listIcon: <Icon icon={bxCodeBlock} width={24}/>, listText: "Skills", listPath: "/contact" },
+  { listIcon: <Icon icon={bxCodeBlock} width={24}/>, listText: "Skills", listPath: "/skills" },
   { listIcon: <ContactMail />, listText: "Contact", listPath: "/contact" },
 ];
 
