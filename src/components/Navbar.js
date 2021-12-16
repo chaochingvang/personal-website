@@ -13,21 +13,23 @@ import Avatar from "@mui/material/Avatar";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
 import ArrowBack from "@mui/icons-material/ArrowBack";
+import MenuIcon from '@mui/icons-material/Menu';
 import AssignmentInd from "@mui/icons-material/AssignmentInd";
 import Home from "@mui/icons-material/Home";
 import Apps from "@mui/icons-material/Apps";
 import ContactMail from "@mui/icons-material/ContactMail";
 import makeStyles from '@mui/styles/makeStyles';
-import avatar from "../avatar.png";
-
+import avatar from "../chaoching.png";
 import Footer from "../components/Footer";
+import { Icon } from '@iconify/react';
+import bxCodeBlock from '@iconify/icons-bx/bx-code-block';
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
     background: "#222",
     margin: 0,
   },
-  arrow: {
+  menu: {
     color: "tomato",
   },
   title: {
@@ -45,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(13),
   },
   listItem: {
-    color: "tan",
+    color: "white",
   },
 }));
 
@@ -53,6 +55,7 @@ const menuItems = [
   { listIcon: <Home />, listText: "Home", listPath: "/" },
   { listIcon: <AssignmentInd />, listText: "Resume", listPath: "/resume" },
   { listIcon: <Apps />, listText: "Portfolio", listPath: "/portfolio" },
+  { listIcon: <Icon icon={bxCodeBlock} width={24}/>, listText: "Skills", listPath: "/contact" },
   { listIcon: <ContactMail />, listText: "Contact", listPath: "/contact" },
 ];
 
@@ -63,7 +66,7 @@ const Navbar = () => {
 
   const sideList = () => (
     <Box className={classes.menuSliderContainer} component="div">
-      <Avatar className={classes.avatar} src={avatar} alt="Mahmudul Alam" />
+      <Avatar className={classes.avatar} src={avatar} alt="Chaoching Vang" />
       <Divider />
       <List>
         {menuItems.map((item, i) => (
@@ -72,6 +75,7 @@ const Navbar = () => {
             key={i}
             className={classes.listItem}
             onClick={() => setOpen(false)}
+            //allow for listItem to use <Link> to 'url path'
             component={Link}
             to={item.listPath}
           >
@@ -91,7 +95,7 @@ const Navbar = () => {
         <AppBar position="static" className={classes.appbar}>
           <Toolbar>
             <IconButton onClick={() => setOpen(true)} size="large">
-              <ArrowBack className={classes.arrow} />
+              <MenuIcon className={classes.menu} />
             </IconButton>
             <Typography variant="h5" className={classes.title}>
               Portfolio
@@ -99,7 +103,7 @@ const Navbar = () => {
           </Toolbar>
         </AppBar>
       </Box>
-      <Drawer open={open} anchor="right" onClose={() => setOpen(false)}>
+      <Drawer open={open} anchor="left" onClose={() => setOpen(false)}>
         {sideList()}
         <Footer />
       </Drawer>
