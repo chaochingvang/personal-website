@@ -112,6 +112,36 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+//// POSITION FORMAT ////
+/* 
+<Box component="div" className={classes.timeLineItem}>
+  <Typography variant="h5" align="center" className={classes.subHeading}>
+    JOB POSITION TITLE
+  </Typography>
+  <Typography variant="body1" align="center" className={classes.body1}>
+    LOCATION
+  </Typography>
+  <Typography variant="body2" align="center" className={classes.body2}>
+    DATE
+  </Typography>
+  <Typography variant="subtitle1" align="left" className={classes.subtitle1}>
+    <ul>
+      <li>JOB DETAILS GOES HERE</li>
+    </ul>
+  </Typography>
+</Box> 
+*/
+
+//// YEAR FORMAT ////
+/* 
+<Typography variant="h2" className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
+    YEAR GOES HERE
+  </Typography> 
+*/
+
+
+
 const Resume = () => {
   const classes = useStyles();
   return (
@@ -120,18 +150,15 @@ const Resume = () => {
         Working Experience
       </Typography>
       <Box component="div" className={classes.timeLine}>
-        <Typography
-          variant="h2"
-          className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-        >
+
+
+        <Typography variant="h2" className={`${classes.timeLineYear} ${classes.timeLineItem}`} >
           Current
         </Typography>
+
+
         <Box component="div" className={classes.timeLineItem}>
-          <Typography
-            variant="h5"
-            align="center"
-            className={classes.subHeading}
-          >
+          <Typography variant="h5" align="center" className={classes.subHeading}>
             Full Stack Software Engineering Student
           </Typography>
           <Typography variant="body1" align="center" className={classes.body1}>
@@ -139,12 +166,8 @@ const Resume = () => {
           </Typography>
           <Typography variant="body2" align="center" className={classes.body2}>
             August 2021 - January 2022
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            align="left"
-            className={classes.subtitle1}
-          >
+          </Typography> 
+          <Typography variant="subtitle1" align="left" className={classes.subtitle1}>
             <ul>
               <li>Solo Project: Fishing For One</li>
               <ul>
@@ -158,143 +181,111 @@ const Resume = () => {
                   Technologies used: Javascript, React, Node.js, Redux, Redux Saga, PostgreSQL, HTML, CSS, Express.js, Passport.js, Filestack API, etc.
                 </li>
               </ul>
+              <li>Group Project: Lystr</li>
+              <ul>
+                <li>Currently scoping and designing wireframes for a client pro bono project. The platform is designed to connect owners of recreational vehicles to interested renters. Owners can list out their recreational vehicles and renters can search by location and date availability for vehicles they may be interested in renting. </li>
+              </ul>
             </ul>
           </Typography>
         </Box>
+
+        
+        <Typography
+          variant="h2"
+          className={`${classes.timeLineYear} ${classes.timeLineItem}`}
+        >
+          2021
+        </Typography>
+
+        
+        <Box component="div" className={classes.timeLineItem}>
+          <Typography
+            variant="h5"
+            align="center"
+            className={classes.subHeading}
+          >
+            Research Professional
+          </Typography>
+          <Typography variant="body1" align="center" className={classes.body1}>
+            SoLaHmo - Saint Paul, MN
+          </Typography>
+          <Typography variant="body2" align="center" className={classes.body2}>
+            September 2018 - March 2021
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            align="left"
+            className={classes.subtitle1}
+          >
+            <ul>
+              <li>SoLaHmo is a nationally-funded clinical Community Based Participatory Action Research (CBPAR) project designed at improving the healthcare of low-income Hmong-speaking and Spanish-speaking patients with high blood pressure</li>
+              <li>Translated research materials from English into Hmong ensuring accuracy and contextual relevance to the Hmong community</li>
+              <li>Evaluated and assessed the eligibility of patients using clinical data pulls</li>
+              <li>Arranged clinic visits for patients to perform preliminary screening to ensure eligibility for research study</li>
+              <li>Recruited patients for research study by phone using Hmong and English accordingly to patients' preference</li>
+              <li>Enrolled patients in person adhering to research protocols and guidelines</li>
+              <li>Administered research study surveys in Hmong and English</li>
+              <li>Troubleshot patients' study devices upon discovery of issues or communication from patient</li>
+              <li>Validated research team in protocol training and patient enrollment processes</li >
+            </ul>
+          </Typography>
+        </Box>
+
         <Typography
           variant="h2"
           className={`${classes.timeLineYear} ${classes.timeLineItem}`}
         >
           2020
         </Typography>
+
+        
         <Box component="div" className={classes.timeLineItem}>
-          <Typography
-            variant="h5"
-            align="center"
-            className={classes.subHeading}
-          >
-            html & css
+          <Typography variant="h5" align="center" className={classes.subHeading}>
+            Research Consultant
           </Typography>
           <Typography variant="body1" align="center" className={classes.body1}>
-            company name where worked
+            Metropolitan Council of the Twin Cities - Greater Minneapolis-St.Paul Area
           </Typography>
-          <Typography
-            variant="subtitle1"
-            align="center"
-            className={classes.subtitle1}
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
-            ipsa, laudantium totam perferendis possimus voluptatibus tenetur.
-            Quasi voluptatibus, nam vitae eaque ad, officia laboriosam
-            repudiandae, rerum necessitatibus nisi mollitia.
+          <Typography variant="body2" align="center" className={classes.body2}>
+            October 2019 - June 2020
           </Typography>
-        </Box>
-        <Typography
-          variant="h2"
-          className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-        >
-          2019
-        </Typography>
+          <Typography variant="subtitle1" align="left" className={classes.subtitle1}>
+            <ul>
+              <li>Participated as a consultant with the Metropolitan Council's Youth and Parks research team to discover findings about the accessibility and experiences of young people in the neighboring county parks</li>
+              <li>Assisted in planning, programming, leading, and documenting field notes for Boy Scout Troop 100 in a Youth Park Research Day</li>
+              <li>Moderated field activities with a group of 30 young scouts about the experiences of young people at the parks</li>
+              <li>Facilitated debrief meetings to consult about preliminary findings with Troop 100</li>
+            </ul>
+          </Typography>
+        </Box> 
+
+
         <Box component="div" className={classes.timeLineItem}>
-          <Typography
-            variant="h5"
-            align="center"
-            className={classes.subHeading}
-          >
-            Fullstack Javascript
+          <Typography variant="h5" align="center" className={classes.subHeading}>
+            Research Professional
           </Typography>
           <Typography variant="body1" align="center" className={classes.body1}>
-            company name where worked
+            University of Minnesota Medical School - Minneapolis, MN
           </Typography>
-          <Typography
-            variant="subtitle1"
-            align="center"
-            className={classes.subtitle1}
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
-            ipsa, laudantium totam perferendis possimus voluptatibus tenetur.
-            Quasi voluptatibus, nam vitae eaque ad, officia laboriosam
-            repudiandae, rerum necessitatibus nisi mollitia.
+          <Typography variant="body2" align="center" className={classes.body2}>
+            October 2017 - January 2020
           </Typography>
-        </Box>
-        <Typography
-          variant="h2"
-          className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-        >
-          2018
-        </Typography>
-        <Box component="div" className={classes.timeLineItem}>
-          <Typography
-            variant="h5"
-            align="center"
-            className={classes.subHeading}
-          >
-            Django & React
+          <Typography variant="subtitle1" align="left" className={classes.subtitle1}>
+            <ul>
+              <li>Led the recruitment and retention process of study participants for a nationally-funded research study called Family Matters</li>
+              <li>Administered research surveys and collected physiological measures from study participants aged 5-11</li>
+              <li>Participated in data collection for research, including recruitment, survey research, and in-home data collection</li>
+              <li>Recruited participants for research study, including recruiting by phone and in-person</li>
+              <li>Developed, reviewed and updated research study protocols and reports using the REDCap database</li>
+              <li>Managed the tracking of longitudinal participants throughout a period of 30 months</li>
+              <li>Delegated recruitment and retention tasks to team members</li>
+              <li>Trained new research team members on study protocols and practices</li>
+              <li>Oversaw the process of contacting hard-to-reach research participants to ensure high study retention</li>
+              <li>Reviewed and translated study documents and materials from English to Hmong, ensuring materials are accurate and culturally appropriate</li>
+            </ul>
           </Typography>
-          <Typography variant="body1" align="center" className={classes.body1}>
-            company name where worked
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            align="center"
-            className={classes.subtitle1}
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
-            ipsa, laudantium totam perferendis possimus voluptatibus tenetur.
-            Quasi voluptatibus, nam vitae eaque ad, officia laboriosam
-            repudiandae, rerum necessitatibus nisi mollitia.
-          </Typography>
-        </Box>
-        <Typography
-          variant="h2"
-          className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-        >
-          2018
-        </Typography>
-        <Box component="div" className={classes.timeLineItem}>
-          <Typography
-            variant="h5"
-            align="center"
-            className={classes.subHeading}
-          >
-            Django & React
-          </Typography>
-          <Typography variant="body1" align="center" className={classes.body1}>
-            company name where worked
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            align="center"
-            className={classes.subtitle1}
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
-            ipsa, laudantium totam perferendis possimus voluptatibus tenetur.
-            Quasi voluptatibus, nam vitae eaque ad, officia laboriosam
-            repudiandae, rerum necessitatibus nisi mollitia.
-          </Typography>
-        </Box>
-        <Box component="div" className={classes.timeLineItem}>
-          <Typography
-            variant="h5"
-            align="center"
-            className={classes.subHeading}
-          >
-            Django & React
-          </Typography>
-          <Typography variant="body1" align="center" className={classes.body1}>
-            company name where worked
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            align="center"
-            className={classes.subtitle1}
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
-            ipsa, laudantium totam perferendis possimus voluptatibus tenetur.
-            Quasi voluptatibus, nam vitae eaque ad, officia laboriosam
-            repudiandae, rerum necessitatibus nisi mollitia.
-          </Typography>
-        </Box>
+        </Box> 
+
       </Box>
     </Box>
   );
