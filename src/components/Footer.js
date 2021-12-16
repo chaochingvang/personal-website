@@ -5,6 +5,8 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import Facebook from "@mui/icons-material/Facebook";
 import Twitter from "@mui/icons-material/Twitter";
 import Instagram from "@mui/icons-material/Instagram";
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const useStyles = makeStyles({
   bottomNavContainer: {
@@ -26,9 +28,9 @@ const Footer = () => {
 
   return (
     <BottomNavigation className={classes.bottomNavContainer}>
-      <BottomNavigationAction icon={<Facebook />} className={classes.root} />
-      <BottomNavigationAction icon={<Twitter />} className={classes.root} />
-      <BottomNavigationAction icon={<Instagram />} className={classes.root} />
+      <BottomNavigationAction icon={<LinkedInIcon />} className={classes.root} />
+      <BottomNavigationAction icon={<GitHubIcon />} className={classes.root} />
+      {/* <BottomNavigationAction icon={<Instagram />} className={classes.root} /> */}
     </BottomNavigation>
   );
 };
