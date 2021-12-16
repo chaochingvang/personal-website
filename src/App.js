@@ -30,10 +30,18 @@ function App() {
         <CssBaseline />
         <Navbar />
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/resume" component={Resume} />
-          <Route exact path="/portfolio" component={Portfolio} />
-          <Route exact path="/contact" component={Contact} />
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/resume">
+              <Resume />
+            </Route>
+            <Route exact path="/portfolio">
+              <Portfolio />
+            </Route>
+            <Route exact path="/contact">
+              <Contact />
+            </Route>
           </Switch>
         </ThemeProvider>
       </StyledEngineProvider>
