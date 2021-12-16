@@ -15,15 +15,8 @@ import makeStyles from '@mui/styles/makeStyles';
 
 const theme = createTheme();
 
-const useStyles = makeStyles((theme) => {
-  root: {
-    // some CSS that access to theme
-  }
-});
-
-
 function App() {
-  const classes = useStyles();
+
   return (
     <React.Fragment>
       <StyledEngineProvider injectFirst>

@@ -49,6 +49,8 @@ const Header = () => {
             "Frontend Developer",
             "Backend Developer",
             "Problem Solver",
+            "Youth Worker",
+            "Hmong",
           ]}
           // the higher the typeSpeed the slower it types
           typeSpeed={80}
