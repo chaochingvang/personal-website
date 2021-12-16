@@ -5,13 +5,13 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typed from "react-typed";
 import makeStyles from '@mui/styles/makeStyles';
-import avatar from "../avatar.png";
+import avatar from "../chaoching.png";
 
 const useStyles = makeStyles((theme) => ({
   avatar: {
-    width: theme.spacing(15),
-    height: theme.spacing(15),
-    margin: theme.spacing(1),
+    width: theme.spacing(30),
+    height: theme.spacing(30),
+    margin: theme.spacing(5),
   },
   title: {
     color: "tomato",
@@ -37,10 +37,10 @@ const Header = () => {
   return (
     <Box className={classes.typedContainer}>
       <Grid container justifyContent="center">
-        <Avatar className={classes.avatar} src={avatar} alt="Mahmudul Alam" />
+        <Avatar className={classes.avatar} src={avatar} alt="Chaoching Vang" />
       </Grid>
-      <Typography className={classes.title} variant="h4">
-        <Typed strings={["Mahmudul Alam"]} typeSpeed={40} />
+      <Typography className={classes.title} variant="h3">
+        <Typed strings={["CHAOCHING VANG"]} typeSpeed={80} />
       </Typography>
 
       <Typography className={classes.subtitle} variant="h5">
@@ -48,9 +48,10 @@ const Header = () => {
           strings={[
             "Frontend Developer",
             "Backend Developer",
-            "Native App Developer",
+            "Problem Solver",
           ]}
-          typeSpeed={40}
+          // the higher the typeSpeed the slower it types
+          typeSpeed={80}
           backSpeed={50}
           loop
         />
