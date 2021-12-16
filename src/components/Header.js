@@ -1,10 +1,10 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
-import Avatar from "@material-ui/core/Avatar";
-import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
+import Typography from "@mui/material/Typography";
+import Avatar from "@mui/material/Avatar";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 import Typed from "react-typed";
-import { makeStyles } from "@material-ui/core/styles";
+import makeStyles from '@mui/styles/makeStyles';
 import avatar from "../avatar.png";
 
 const useStyles = makeStyles((theme) => ({
@@ -36,7 +36,7 @@ const Header = () => {
 
   return (
     <Box className={classes.typedContainer}>
-      <Grid container justify="center">
+      <Grid container justifyContent="center">
         <Avatar className={classes.avatar} src={avatar} alt="Mahmudul Alam" />
       </Grid>
       <Typography className={classes.title} variant="h4">

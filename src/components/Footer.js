@@ -1,10 +1,10 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import BottomNavigation from "@material-ui/core/BottomNavigation";
-import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
-import Facebook from "@material-ui/icons/Facebook";
-import Twitter from "@material-ui/icons/Twitter";
-import Instagram from "@material-ui/icons/Instagram";
+import makeStyles from '@mui/styles/makeStyles';
+import BottomNavigation from "@mui/material/BottomNavigation";
+import BottomNavigationAction from "@mui/material/BottomNavigationAction";
+import Facebook from "@mui/icons-material/Facebook";
+import Twitter from "@mui/icons-material/Twitter";
+import Instagram from "@mui/icons-material/Instagram";
 
 const useStyles = makeStyles({
   bottomNavContainer: {

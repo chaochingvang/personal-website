@@ -1,12 +1,13 @@
 import React from "react";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
-import Box from "@material-ui/core/Box";
-import TextField from "@material-ui/core/TextField";
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import Button from "@material-ui/core/Button";
+import makeStyles from '@mui/styles/makeStyles';
+import withStyles from '@mui/styles/withStyles';
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import Button from "@mui/material/Button";
 
-import Send from "@material-ui/icons/Send";
+import Send from "@mui/icons-material/Send";
 
 const useStyles = makeStyles((theme) => ({
   contactContainer: {
@@ -65,7 +66,7 @@ const Contact = () => {
   const classes = useStyles();
   return (
     <Box component="div" className={classes.contactContainer}>
-      <Grid container justify="center">
+      <Grid container justifyContent="center">
         <Box component="form" className={classes.form}>
           <Typography variant="h5" className={classes.heading}>
             Hire or Contact me...

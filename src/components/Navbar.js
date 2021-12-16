@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Drawer from "@material-ui/core/Drawer";
-import Box from "@material-ui/core/Box";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import Avatar from "@material-ui/core/Avatar";
-import Divider from "@material-ui/core/Divider";
-import Typography from "@material-ui/core/Typography";
-import ArrowBack from "@material-ui/icons/ArrowBack";
-import AssignmentInd from "@material-ui/icons/AssignmentInd";
-import Home from "@material-ui/icons/Home";
-import Apps from "@material-ui/icons/Apps";
-import ContactMail from "@material-ui/icons/ContactMail";
-import { makeStyles } from "@material-ui/core/styles";
+import Drawer from "@mui/material/Drawer";
+import Box from "@mui/material/Box";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import Avatar from "@mui/material/Avatar";
+import Divider from "@mui/material/Divider";
+import Typography from "@mui/material/Typography";
+import ArrowBack from "@mui/icons-material/ArrowBack";
+import AssignmentInd from "@mui/icons-material/AssignmentInd";
+import Home from "@mui/icons-material/Home";
+import Apps from "@mui/icons-material/Apps";
+import ContactMail from "@mui/icons-material/ContactMail";
+import makeStyles from '@mui/styles/makeStyles';
 import avatar from "../avatar.png";
 
 import Footer from "../components/Footer";
@@ -90,7 +90,7 @@ const Navbar = () => {
       <Box component="nav">
         <AppBar position="static" className={classes.appbar}>
           <Toolbar>
-            <IconButton onClick={() => setOpen(true)}>
+            <IconButton onClick={() => setOpen(true)} size="large">
               <ArrowBack className={classes.arrow} />
             </IconButton>
             <Typography variant="h5" className={classes.title}>
