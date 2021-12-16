@@ -7,6 +7,8 @@ import Twitter from "@mui/icons-material/Twitter";
 import Instagram from "@mui/icons-material/Instagram";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { Link } from "react-router-dom";
+
 
 const useStyles = makeStyles({
   bottomNavContainer: {
@@ -28,8 +30,10 @@ const Footer = () => {
 
   return (
     <BottomNavigation className={classes.bottomNavContainer}>
-      <BottomNavigationAction icon={<LinkedInIcon />} className={classes.root} />
-      <BottomNavigationAction icon={<GitHubIcon />} className={classes.root} />
+      <BottomNavigationAction icon={<LinkedInIcon />} className={classes.root}
+        onClick={() => window.open("https://www.linkedin.com/in/chaochingvang/")} />
+      <BottomNavigationAction icon={<GitHubIcon />} className={classes.root}
+        onClick={() => window.open("https://github.com/chaochingvang")} />
       {/* <BottomNavigationAction icon={<Instagram />} className={classes.root} /> */}
     </BottomNavigation>
   );
