@@ -14,6 +14,18 @@ import { Icon } from '@iconify/react';
 import html5 from '@iconify/icons-logos/html-5';
 import css3 from '@iconify/icons-logos/css-3';
 import javascriptIcon from '@iconify/icons-logos/javascript';
+import reactIcon from '@iconify/icons-logos/react';
+import nodejsIcon from '@iconify/icons-logos/nodejs-icon';
+import jqueryIcon from '@iconify/icons-logos/jquery';
+import gitIcon from '@iconify/icons-logos/git-icon';
+import reduxIcon from '@iconify/icons-logos/redux';
+import reduxSaga from '@iconify/icons-logos/redux-saga';
+import postgresqlIcon from '@iconify/icons-logos/postgresql';
+import githubIcon from '@iconify/icons-logos/github-icon';
+import herokuIcon from '@iconify/icons-logos/heroku-icon';
+import materialUi from '@iconify/icons-logos/material-ui';
+import npmIcon from '@iconify/icons-logos/npm';
+import visualStudioCode from '@iconify/icons-logos/visual-studio-code';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -94,7 +106,7 @@ const Skills = () => {
                         <CardContent>
                             {skill.icon}<br/>
                         </CardContent>
-                        <CardContent sx={{margin: 0, padding: 0,}}>
+                        <CardContent sx={{margin: 0, padding: 0, border: '1px solid black'}}>
                             {skill.name}
                         </CardContent>
                     </Card>
