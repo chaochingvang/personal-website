@@ -2,13 +2,6 @@ import React from "react";
 import makeStyles from '@mui/styles/makeStyles';
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
-import CardActionArea from "@mui/material/CardActionArea";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import { Container } from '@mui/material'
 import Typography from "@mui/material/Typography";
 import { Icon } from '@iconify/react';
 import html5 from '@iconify/icons-logos/html-5';
@@ -16,7 +9,6 @@ import css3 from '@iconify/icons-logos/css-3';
 import javascriptIcon from '@iconify/icons-logos/javascript';
 import reactIcon from '@iconify/icons-logos/react';
 import nodejsIcon from '@iconify/icons-logos/nodejs-icon';
-import jqueryIcon from '@iconify/icons-logos/jquery';
 import jqueryFill from '@iconify/icons-akar-icons/jquery-fill';
 import gitIcon from '@iconify/icons-logos/git-icon';
 import reduxIcon from '@iconify/icons-logos/redux';
@@ -25,11 +17,7 @@ import postgresqlIcon from '@iconify/icons-logos/postgresql';
 import githubIcon from '@iconify/icons-logos/github-icon';
 import herokuIcon from '@iconify/icons-logos/heroku-icon';
 import materialUi from '@iconify/icons-logos/material-ui';
-import npmIcon from '@iconify/icons-logos/npm';
 import visualStudioCode from '@iconify/icons-logos/visual-studio-code';
-
-import Paper from '@mui/material/Paper';
-import { experimentalStyled as styled } from '@mui/material/styles';
 
 
 
@@ -37,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
     mainContainer: {
         background: "#233",
         minHeight: "100vh",
-        // width: "100vw",
         padding: "1em"
     },
     heading: {
@@ -126,11 +113,10 @@ const Skills = () => {
             <Typography variant="h4" align="center" className={classes.heading}>
                 SKILLS
             </Typography>
-
             <Box sx={{ flexGrow: 1 }}>
-                <Grid container spacing={{ xs: 2, md: 4 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+                <Grid container spacing={{ xs: 2, md: 4 }} columns={{ xs: 4, sm: 8, md: 12 }} sx={{justifyContent: "center"}}>
                     {skills.map((skill, index) => (
-                        <Grid item xs={2} sm={2} md={2} key={index} sx={{ textAlign: 'center' }}>
+                        <Grid item xs={2} sm={2} md={2} key={index} sx={{ textAlign: "center", padding: "1em"}}>
                             <Box sx={{backgroundColor: "transparent"}}>
                                     {skill.icon}<br />
                                     <Typography variant="h6">{skill.name}</Typography>
@@ -140,7 +126,6 @@ const Skills = () => {
                 </Grid>
             </Box>
         </Box>
-
     </>);
 };
 
