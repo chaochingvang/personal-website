@@ -8,7 +8,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
-import {Container} from '@mui/material'
+import { Container } from '@mui/material'
 import Typography from "@mui/material/Typography";
 import { Icon } from '@iconify/react';
 import html5 from '@iconify/icons-logos/html-5';
@@ -17,6 +17,7 @@ import javascriptIcon from '@iconify/icons-logos/javascript';
 import reactIcon from '@iconify/icons-logos/react';
 import nodejsIcon from '@iconify/icons-logos/nodejs-icon';
 import jqueryIcon from '@iconify/icons-logos/jquery';
+import jqueryFill from '@iconify/icons-akar-icons/jquery-fill';
 import gitIcon from '@iconify/icons-logos/git-icon';
 import reduxIcon from '@iconify/icons-logos/redux';
 import reduxSaga from '@iconify/icons-logos/redux-saga';
@@ -27,94 +28,120 @@ import materialUi from '@iconify/icons-logos/material-ui';
 import npmIcon from '@iconify/icons-logos/npm';
 import visualStudioCode from '@iconify/icons-logos/visual-studio-code';
 
+import Paper from '@mui/material/Paper';
+import { experimentalStyled as styled } from '@mui/material/styles';
+
+
 
 const useStyles = makeStyles((theme) => ({
     mainContainer: {
         background: "#233",
-        height: "100vh",
-        width: "100vw",
+        minHeight: "100vh",
+        // width: "100vw",
+        padding: "1em"
     },
     heading: {
         color: "tomato",
-        padding: "3rem 0",
+        padding: "1em",
         textTransform: "uppercase",
     },
     iconsContainer: {
         display: 'flex',
         flexWrap: 'wrap',
         flexDirection: 'row',
-        textAlign: 'center', 
-        margin: 'auto', 
-        justifyContent: 'center', 
+        textAlign: 'center',
+        margin: 'auto',
+        justifyContent: 'center',
         border: '1px solid black',
         minWidth: 'sm',
-        width: '80%'
-    },
-    cards: {
-        margin: '2em',
-        minWidth: '5%',
-        maxWidth: '10%',
+        width: '70%'
     },
 }));
+
+const imageHeight = '8vh'
 
 const skills = [
     {
         name: 'HTML5',
-        icon: <Icon icon={html5} width="100%"/>
+        icon: <Icon icon={html5} height={imageHeight} />
     },
     {
         name: 'CSS3',
-        icon: <Icon icon={css3} width="100%" height="100%" />
+        icon: <Icon icon={css3} height={imageHeight} />
     },
     {
-        name: 'HTML5',
-        icon: <Icon icon={javascriptIcon} width="100%" height="100%" />
+        name: 'Javascript',
+        icon: <Icon icon={javascriptIcon} height={imageHeight} />
     },
     {
-        name: 'HTML5',
-        icon: <Icon icon={html5} width="100%" height="100%" />
+        name: 'React',
+        icon: <Icon icon={reactIcon} height={imageHeight} />
     },
     {
-        name: 'HTML5',
-        icon: <Icon icon={html5} width="100%" height="100%" />
+        name: 'Node.js',
+        icon: <Icon icon={nodejsIcon} height={imageHeight} />
     },
     {
-        name: 'HTML5',
-        icon: <Icon icon={html5} width="100%" height="100%" />
+        name: 'jQuery',
+        icon: <Icon icon={jqueryFill} height={imageHeight} color="#0769ad" />
     },
     {
-        name: 'HTML5',
-        icon: <Icon icon={html5} width="100%" height="100%" />
+        name: 'Git',
+        icon: <Icon icon={gitIcon} height={imageHeight} />
     },
     {
-        name: 'HTML5',
-        icon: <Icon icon={html5} width="100%" height="100%" />
+        name: 'Redux',
+        icon: <Icon icon={reduxIcon} height={imageHeight} />
+    },
+    {
+        name: 'Redux Saga',
+        icon: <Icon icon={reduxSaga} height={imageHeight} />
+    },
+    {
+        name: 'postgreSQL',
+        icon: <Icon icon={postgresqlIcon} height={imageHeight} />
+    },
+    {
+        name: 'Github',
+        icon: <Icon icon={githubIcon} height={imageHeight} />
+    },
+    {
+        name: 'Heroku',
+        icon: <Icon icon={herokuIcon} height={imageHeight} />
+    },
+    {
+        name: 'Material UI',
+        icon: <Icon icon={materialUi} height={imageHeight} />
+    },
+    {
+        name: 'Visual Studio Code',
+        icon: <Icon icon={visualStudioCode} height={imageHeight} />
     },
 ]
 
-
 const Skills = () => {
     const classes = useStyles();
-    return (
+    return (<>
         <Box component="div" className={classes.mainContainer}>
             <Typography variant="h4" align="center" className={classes.heading}>
                 SKILLS
             </Typography>
-            <Box className={classes.iconsContainer}>
-                {skills.map(skill => (
-                    <Card className={classes.cards}>
-                        <CardContent>
-                            {skill.icon}<br/>
-                        </CardContent>
-                        <CardContent sx={{margin: 0, padding: 0, border: '1px solid black'}}>
-                            {skill.name}
-                        </CardContent>
-                    </Card>
-                ))}
+
+            <Box sx={{ flexGrow: 1 }}>
+                <Grid container spacing={{ xs: 2, md: 4 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+                    {skills.map((skill, index) => (
+                        <Grid item xs={2} sm={2} md={2} key={index} sx={{ textAlign: 'center' }}>
+                            <Box sx={{backgroundColor: "transparent"}}>
+                                    {skill.icon}<br />
+                                    <Typography variant="h6">{skill.name}</Typography>
+                            </Box>
+                        </Grid>
+                    ))}
+                </Grid>
             </Box>
         </Box>
 
-    );
+    </>);
 };
 
 export default Skills;
