@@ -1,19 +1,47 @@
 import React from "react";
 import makeStyles from '@mui/styles/makeStyles';
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
-import CardActionArea from "@mui/material/CardActionArea";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography, Dialog, DialogTitle, DialogContent, DialogActions } from "@mui/material"
+// import Box from "@mui/material/Box";
+// import Grid from "@mui/material/Grid";
+// import Card from "@mui/material/Card";
+// import CardActionArea from "@mui/material/CardActionArea";
+// import CardActions from "@mui/material/CardActions";
+// import CardContent from "@mui/material/CardContent";
+// import CardMedia from "@mui/material/CardMedia";
+// import Button from "@mui/material/Button";
+// import Typography from "@mui/material/Typography";
+
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 
 import project1 from "../images/html-css-javascript-lg.jpg";
 import project2 from "../images/html-css-javascript.jpg";
 import project3 from "../images/javascript-fullstack.jpg";
 import project4 from "../images/mern-stack.jpg";
+
+
+const CardPopUp = ({project, openStatus, handleDialogClose}) => {
+  return (
+    <Dialog onClose={handleDialogClose} open={openStatus}>
+      <DialogTitle>
+        <Box display="flex" alignItems="center">
+          <Box flexGrow={1} >{project.name}</Box>
+          <Box>
+            <IconButton onClick={handleDialogClose}>
+              <CloseIcon />
+            </IconButton>
+          </Box>
+        </Box>
+      </DialogTitle>
+      <DialogContent>
+        {project.name}
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={() => handleDialogClose()}>Close</Button>
+      </DialogActions>
+    </Dialog>
+  )
+}
 
 
 const useStyles = makeStyles((theme) => ({
@@ -41,7 +69,7 @@ const projects = [
   },
   {
     name: "Pet Hotel",
-    description: `This group project started with the objective of learning a whole new language and implementing it into a CRUD application. Project duration was a one week sprint starting from learning about C# classes and objects to implementing the C# restful APIs. This project is a combination of both Javascript w/ React for the front-end and C# for the back-end. `,
+    description: `This group project started with the objective of learning a whole new language and implementing it into a CRUD application. Project duration was a one week sprint starting with learning about C# classes and objects to implementing the C# restful APIs. This project is a combination of both Javascript w/ React for the front-end and C# for the back-end. `,
     image: project2,
   },
   {
@@ -56,16 +84,29 @@ const projects = [
   },
 ];
 
-const Portfolio = () => {
+function Portfolio() {
   const classes = useStyles();
-  return (
+
+  const [openStatus, setOpenStatus] = React.useState(false);
+  const [selectedProject, setSelectedProject] = React.useState({});
+
+  const handleDialogOpen = (project) => {
+    setSelectedProject(project);
+    setOpenStatus(true);
+  }
+
+  const handleDialogClose = () => {
+    setOpenStatus(false);
+  }
+
+  return (<>
     <Box component="div" className={classes.mainContainer}>
       <Grid container justifyContent="center" alignItems={"stretch"}>
         {/* Projects */}
         {projects.map((project, i) => (
           <Grid item xs={12} sm={8} md={4} key={i}>
             <Card className={classes.cardContainer}>
-              <CardActionArea>
+              <CardActionArea onClick={() => handleDialogOpen(project)}>
                 <CardMedia
                   component="img"
                   alt="Project 1"
@@ -83,6 +124,9 @@ const Portfolio = () => {
               </CardActionArea>
               <CardActions>
                 <Button size="small" color="primary">
+                  View repo on GitHub
+                </Button>
+                <Button size="small" color="primary">
                   Live Demo
                 </Button>
               </CardActions>
@@ -91,7 +135,21 @@ const Portfolio = () => {
         ))}
       </Grid>
     </Box>
-  );
+
+    <CardPopUp project={selectedProject} openStatus={openStatus} handleDialogClose={handleDialogClose}/>
+{/* POP UP WHEN CARD IS CLICKED */}
+    {/* <Dialog>
+      <DialogTitle>
+
+      </DialogTitle>
+      <DialogContent>
+
+      </DialogContent>
+      <DialogActions>
+
+      </DialogActions>
+    </Dialog> */}
+  </>);
 };
 
 export default Portfolio;
