@@ -22,10 +22,10 @@ import project4 from "../images/mern-stack.jpg";
 
 const CardPopUp = ({ project, openStatus, handleDialogClose }) => {
   return (
-    <Dialog onClose={handleDialogClose} open={openStatus}>
+    <Dialog onClose={handleDialogClose} open={openStatus} fullWidth={true}>
       <DialogTitle>
         <Box display="flex" alignItems="center">
-          <Box flexGrow={1} >{project.name}</Box>
+          <Box flexGrow={1}><Typography variant="h4">{project.name}</Typography></Box>
           <Box>
             <IconButton onClick={handleDialogClose}>
               <CloseIcon />

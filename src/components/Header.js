@@ -9,8 +9,8 @@ import avatar from "../chaoching.png";
 
 const useStyles = makeStyles((theme) => ({
   avatar: {
-    width: theme.spacing(30),
-    height: theme.spacing(30),
+    width: theme.spacing(40),
+    height: theme.spacing(40),
     margin: theme.spacing(5),
   },
   title: {

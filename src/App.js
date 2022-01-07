@@ -34,9 +34,9 @@ function App() {
             <Route exact path="/skills">
               <Skills/>
             </Route>
-            <Route exact path="/contact">
+            {/* <Route exact path="/contact">
               <Contact />
-            </Route>
+            </Route> */}
           </Switch>
         </ThemeProvider>
       </StyledEngineProvider>
