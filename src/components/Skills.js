@@ -114,7 +114,7 @@ const Skills = () => {
                 SKILLS
             </Typography>
             <Box sx={{ flexGrow: 1 }}>
-                <Grid container spacing={{ xs: 2, md: 4 }} columns={{ xs: 4, sm: 8, md: 12 }} sx={{justifyContent: "center"}}>
+                <Grid container spacing={{ xs: 2, md: 4 }} columns={{ xs: 4, sm: 8, md: 12 }} justifyContent="center">
                     {skills.map((skill, index) => (
                         <Grid item xs={2} sm={2} md={2} key={index} sx={{ textAlign: "center", padding: "1em"}}>
                             <Box sx={{backgroundColor: "transparent"}}>

@@ -1,6 +1,6 @@
 import React from "react";
 import makeStyles from '@mui/styles/makeStyles';
-import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography, Dialog, DialogTitle, DialogContent, DialogActions } from "@mui/material"
+import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography, Dialog, DialogTitle, DialogContent, DialogActions, IconButton } from "@mui/material"
 // import Box from "@mui/material/Box";
 // import Grid from "@mui/material/Grid";
 // import Card from "@mui/material/Card";
@@ -10,9 +10,10 @@ import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia,
 // import CardMedia from "@mui/material/CardMedia";
 // import Button from "@mui/material/Button";
 // import Typography from "@mui/material/Typography";
-
-import IconButton from '@mui/material/IconButton';
+import { Icon } from '@iconify/react';
 import CloseIcon from '@mui/icons-material/Close';
+import githubIcon from '@iconify/icons-logos/github-icon';
+
 
 import project1 from "../images/html-css-javascript-lg.jpg";
 import project2 from "../images/html-css-javascript.jpg";
@@ -48,25 +49,39 @@ const useStyles = makeStyles((theme) => ({
   mainContainer: {
     background: "#233",
     minHeight: "100vh",
+    padding: "2em",
+    margin: "auto"
   },
   cardContainer: {
-    maxWidth: 345,
     margin: "3rem auto",
-  },
-  sameHeight: {
-    height: "100%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
+  },
+  githubLinkContainer: {
+    backgroundColor: "transparent",
+    border: "solid black 1px",
+  },
+  githubLink: {
+    padding: "1em"
   }
 }));
+
+const gitHubProfile = "https://github.com/chaochingvang";
 
 const projects = [
   {
     name: "Fishing For One",
-    description: `The application functions as an informational guide on local fish types and common fishing lures and provides recommendations to enhance the user's fishing experience. FishingForOne also serves as a journal where users can record their own personal entries that will populate the application's database and increase its recommendation accuracy`,
+    description: `The application functions as an informational guide on local fish types and common fishing lures and provides recommendations to enhance the user's fishing experience. FishingForOne also serves as a journal where users can record their own personal entries that will populate the application's database and increase its recommendation accuracy.`,
     image: project1,
     repoLink: "https://github.com/chaochingvang/Fishing-For-One",
+    siteLink: "https://fishingforone.herokuapp.com/",
+  },
+  {
+    name: "LYSTR",
+    description: `Currently scoping and designing wireframes for a client pro bono project. The platform is designed to connect owners of recreational vehicles to interested renters. Owners can list out their recreational vehicles and renters can search by location and date availability for vehicles they may be interested in renting. `,
+    image: project4,
+    repoLink: "",
     siteLink: "",
   },
   {
@@ -81,13 +96,6 @@ const projects = [
     description: `This project was created using javascript with the jQuery library. This app serves as a to-do-list where user can enter in their task and set a due date for each respective task. Upon completing the task, the user can mark the task completed and thestatus of the task will be updated on the DOM. All tasks and completion status are saved locally in a postgreSQL database.`,
     image: project3,
     repoLink: "https://github.com/chaochingvang/To-Do-List-Application",
-    siteLink: "",
-  },
-  {
-    name: "LYSTR",
-    description: `Currently scoping and designing wireframes for a client pro bono project. The platform is designed to connect owners of recreational vehicles to interested renters. Owners can list out their recreational vehicles and renters can search by location and date availability for vehicles they may be interested in renting. `,
-    image: project4,
-    repoLink: "",
     siteLink: "",
   },
 ];
@@ -109,10 +117,23 @@ function Portfolio() {
 
   return (<>
     <Box component="div" className={classes.mainContainer}>
-      <Grid container justifyContent="center" alignItems={"stretch"}>
+      <Grid container justifyContent="center">
+        <Grid item textAlign="center">
+          <Card className={classes.githubLinkContainer}>
+            <CardActionArea className={classes.githubLink} onClick={() => window.open(gitHubProfile)}>
+              <Icon icon={githubIcon} height='8vh' />
+            <Typography variant="h6">
+              View GitHub Porfolio
+              </Typography>
+            </CardActionArea>
+          </Card>
+        </Grid>
+      </Grid>
+      {/* grid default column size is 12 */}
+      <Grid container spacing={4} justifyContent="center" alignItems={"stretch"}>
         {/* Projects */}
         {projects.map((project, i) => (
-          <Grid item xs={12} sm={8} md={4} key={i}>
+          <Grid item xs={12} sm={6} md={4} lg={3} key={i} sx={{display: 'flex'}}>
             <Card className={classes.cardContainer}>
               <CardActionArea onClick={() => handleDialogOpen(project)}>
                 <CardMedia
@@ -131,12 +152,14 @@ function Portfolio() {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary" onClick={() => window.open(project.repoLink)}>
-                  View code on GitHub
-                </Button>
+                <Box flexGrow={1} textAlign="left">
+                  <Button size="small" color="primary" onClick={() => window.open(project.repoLink)}>
+                    View code on GitHub
+                  </Button>
+                </Box>
                 {/* Only show Live Demo button if there is a site link for project */}
                 {project.siteLink !== ""
-                  ? <Button size="small" color="primary">
+                  ? <Button size="small" color="primary" onClick={() => window.open(project.siteLink)}>
                     Live Demo
                   </Button>
                   : ""}
