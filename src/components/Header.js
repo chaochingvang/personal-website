@@ -14,10 +14,10 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(5),
   },
   title: {
-    color: "tomato",
+    color: "#dedede",
   },
   subtitle: {
-    color: "tan",
+    color: "#c2c2c2",
     textTransform: "uppercase",
   },
   typedContainer: {

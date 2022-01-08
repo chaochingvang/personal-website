@@ -23,12 +23,12 @@ import visualStudioCode from '@iconify/icons-logos/visual-studio-code';
 
 const useStyles = makeStyles((theme) => ({
     mainContainer: {
-        background: "#233",
+        background: "#dedede",
         minHeight: "100vh",
         padding: "1em"
     },
     heading: {
-        color: "tomato",
+        color: "#222",
         padding: "1em",
         textTransform: "uppercase",
     },

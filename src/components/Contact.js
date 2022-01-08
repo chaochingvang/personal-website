@@ -11,7 +11,7 @@ import Send from "@mui/icons-material/Send";
 
 const useStyles = makeStyles((theme) => ({
   contactContainer: {
-    background: "#233",
+    background: "#dedede",
     height: "100vh",
   },
   heading: {

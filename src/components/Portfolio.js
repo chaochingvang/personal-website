@@ -1,15 +1,7 @@
 import React from "react";
 import makeStyles from '@mui/styles/makeStyles';
 import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography, Dialog, DialogTitle, DialogContent, DialogActions, IconButton } from "@mui/material"
-// import Box from "@mui/material/Box";
-// import Grid from "@mui/material/Grid";
-// import Card from "@mui/material/Card";
-// import CardActionArea from "@mui/material/CardActionArea";
-// import CardActions from "@mui/material/CardActions";
-// import CardContent from "@mui/material/CardContent";
-// import CardMedia from "@mui/material/CardMedia";
-// import Button from "@mui/material/Button";
-// import Typography from "@mui/material/Typography";
+
 import { Icon } from '@iconify/react';
 import CloseIcon from '@mui/icons-material/Close';
 import githubIcon from '@iconify/icons-logos/github-icon';
@@ -47,7 +39,7 @@ const CardPopUp = ({ project, openStatus, handleDialogClose }) => {
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
-    background: "#233",
+    background: "#dedede",
     minHeight: "100vh",
     padding: "2em",
     margin: "auto"

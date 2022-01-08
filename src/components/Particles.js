@@ -28,7 +28,7 @@ const Particles = () => {
             type: "circle",
             stroke: {
               width: 1,
-              color: "tomato",
+              color: "#222",
             },
           },
           size: {

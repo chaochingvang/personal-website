@@ -29,14 +29,14 @@ const useStyles = makeStyles((theme) => ({
     margin: 0,
   },
   menu: {
-    color: "tomato",
+    color: "#c2c2c2",
   },
   title: {
-    color: "tan",
+    color: "#dedede",
   },
   menuSliderContainer: {
     width: 250,
-    background: "#511",
+    background: "#c2c2c2",
     height: "100%",
   },
   avatar: {
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(13),
   },
   listItem: {
-    color: "white",
+    color: "black",
   },
 }));
 
@@ -97,7 +97,7 @@ const Navbar = () => {
               <MenuIcon className={classes.menu} />
             </IconButton>
             <Typography variant="h5" className={classes.title}>
-              Portfolio
+              CHAOCHING VANG
             </Typography>
           </Toolbar>
         </AppBar>
