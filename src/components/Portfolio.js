@@ -6,11 +6,11 @@ import { Icon } from '@iconify/react';
 import CloseIcon from '@mui/icons-material/Close';
 import githubIcon from '@iconify/icons-logos/github-icon';
 
-
-import project1 from "../images/html-css-javascript-lg.jpg";
-import project2 from "../images/html-css-javascript.jpg";
-import project3 from "../images/javascript-fullstack.jpg";
-import project4 from "../images/mern-stack.jpg";
+//images are 513x200
+import fishingLogo from "../images/fishingforone-logo.png";
+import lystrLogo from "../images/LYSTR-logo.png"
+import petHotelLogo from "../images/pethotel-logo.png";
+import listLogo from "../images/todolist-logo.png";
 
 
 const CardPopUp = ({ project, openStatus, handleDialogClose }) => {
@@ -56,7 +56,10 @@ const useStyles = makeStyles((theme) => ({
   },
   githubLink: {
     padding: "1em"
-  }
+  },
+  imageFit: {
+    objectFit: "contain",
+  },
 }));
 
 const gitHubProfile = "https://github.com/chaochingvang";
@@ -65,28 +68,28 @@ const projects = [
   {
     name: "Fishing For One",
     description: `The application functions as an informational guide on local fish types and common fishing lures and provides recommendations to enhance the user's fishing experience. FishingForOne also serves as a journal where users can record their own personal entries that will populate the application's database and increase its recommendation accuracy.`,
-    image: project1,
+    image: fishingLogo,
     repoLink: "https://github.com/chaochingvang/Fishing-For-One",
     siteLink: "https://fishingforone.herokuapp.com/",
   },
   {
     name: "LYSTR",
     description: `This project was a client pro bono project that was completed in a group of 4 developers. The platform is designed to connect owners of recreational vehicles to interested renters. Owners can list out their recreational vehicles and renters can search by location and date availability for vehicles they may be interested in renting.`,
-    image: project4,
+    image: lystrLogo,
     repoLink: "https://github.com/chaochingvang/lystr",
     siteLink: "https://lystrprime.herokuapp.com/#/home",
   },
   {
     name: "Pet Hotel",
     description: `This group project started with the objective of learning a whole new language and implementing it into a CRUD application. Project duration was a one week sprint starting with learning about C# classes and objects to implementing the C# restful APIs. This project is a combination of both Javascript w/ React for the front-end and C# for the back-end. `,
-    image: project2,
+    image: petHotelLogo,
     repoLink: "https://github.com/chaochingvang/Pet-Hotel",
     siteLink: "",
   },
   {
     name: "To Do List",
     description: `This project was created using javascript with the jQuery library. This app serves as a to-do-list where user can enter in their task and set a due date for each respective task. Upon completing the task, the user can mark the task completed and thestatus of the task will be updated on the DOM. All tasks and completion status are saved locally in a postgreSQL database.`,
-    image: project3,
+    image: listLogo,
     repoLink: "https://github.com/chaochingvang/To-Do-List-Application",
     siteLink: "",
   },
@@ -129,6 +132,7 @@ function Portfolio() {
             <Card className={classes.cardContainer}>
               <CardActionArea onClick={() => handleDialogOpen(project)}>
                 <CardMedia
+                  className={classes.imageFit}
                   component="img"
                   alt="Project 1"
                   height="200"
