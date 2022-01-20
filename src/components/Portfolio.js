@@ -1,40 +1,15 @@
 import React from "react";
 import makeStyles from '@mui/styles/makeStyles';
 import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography, Dialog, DialogTitle, DialogContent, DialogActions, IconButton } from "@mui/material"
-
 import { Icon } from '@iconify/react';
 import CloseIcon from '@mui/icons-material/Close';
 import githubIcon from '@iconify/icons-logos/github-icon';
 
-//images are 513x200
+//project images are 513x200
 import fishingLogo from "../images/fishingforone-logo.png";
 import lystrLogo from "../images/LYSTR-logo.png"
 import petHotelLogo from "../images/pethotel-logo.png";
 import listLogo from "../images/todolist-logo.png";
-
-
-const CardPopUp = ({ project, openStatus, handleDialogClose }) => {
-  return (
-    <Dialog onClose={handleDialogClose} open={openStatus} fullWidth={true}>
-      <DialogTitle>
-        <Box display="flex" alignItems="center">
-          <Box flexGrow={1}><Typography variant="h4">{project.name}</Typography></Box>
-          <Box>
-            <IconButton onClick={handleDialogClose}>
-              <CloseIcon />
-            </IconButton>
-          </Box>
-        </Box>
-      </DialogTitle>
-      <DialogContent>
-        {project.name}
-      </DialogContent>
-      <DialogActions>
-        <Button onClick={() => handleDialogClose()}>Close</Button>
-      </DialogActions>
-    </Dialog>
-  )
-}
 
 
 const useStyles = makeStyles((theme) => ({
@@ -95,6 +70,30 @@ const projects = [
   },
 ];
 
+//Card Pop Up Dialog
+// const CardPopUp = ({ project, openStatus, handleDialogClose }) => {
+//   return (
+//     <Dialog onClose={handleDialogClose} open={openStatus} fullWidth={true}>
+//       <DialogTitle>
+//         <Box display="flex" alignItems="center">
+//           <Box flexGrow={1}><Typography variant="h4">{project.name}</Typography></Box>
+//           <Box>
+//             <IconButton onClick={handleDialogClose}>
+//               <CloseIcon />
+//             </IconButton>
+//           </Box>
+//         </Box>
+//       </DialogTitle>
+//       <DialogContent>
+//         {project.name}
+//       </DialogContent>
+//       <DialogActions>
+//         <Button onClick={() => handleDialogClose()}>Close</Button>
+//       </DialogActions>
+//     </Dialog>
+//   )
+// }
+
 function Portfolio() {
   const classes = useStyles();
 
@@ -130,7 +129,9 @@ function Portfolio() {
         {projects.map((project, i) => (
           <Grid item xs={12} sm={6} md={4} lg={3} key={i} sx={{display: 'flex'}}>
             <Card className={classes.cardContainer}>
-              <CardActionArea onClick={() => handleDialogOpen(project)}>
+              <CardActionArea
+                // onClick={() => handleDialogOpen(project)}
+              >
                 <CardMedia
                   className={classes.imageFit}
                   component="img"
@@ -166,7 +167,7 @@ function Portfolio() {
       </Grid>
     </Box>
 
-    <CardPopUp project={selectedProject} openStatus={openStatus} handleDialogClose={handleDialogClose} />
+    {/* <CardPopUp project={selectedProject} openStatus={openStatus} handleDialogClose={handleDialogClose} /> */}
   </>);
 };
 
