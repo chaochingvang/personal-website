@@ -71,10 +71,10 @@ const projects = [
   },
   {
     name: "LYSTR",
-    description: `Currently scoping and designing wireframes for a client pro bono project. The platform is designed to connect owners of recreational vehicles to interested renters. Owners can list out their recreational vehicles and renters can search by location and date availability for vehicles they may be interested in renting. `,
+    description: `This project was a client pro bono project that was completed in a group of 4 developers. The platform is designed to connect owners of recreational vehicles to interested renters. Owners can list out their recreational vehicles and renters can search by location and date availability for vehicles they may be interested in renting.`,
     image: project4,
-    repoLink: "",
-    siteLink: "",
+    repoLink: "https://github.com/chaochingvang/lystr",
+    siteLink: "https://lystrprime.herokuapp.com/#/home",
   },
   {
     name: "Pet Hotel",
