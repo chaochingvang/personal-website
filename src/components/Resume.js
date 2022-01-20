@@ -113,7 +113,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-//// POSITION FORMAT ////
+//// JOB POSITION FORMAT ////
 /* 
 <Box component="div" className={classes.timeLineItem}>
   <Typography variant="h5" align="center" className={classes.subHeading}>
@@ -183,7 +183,15 @@ const Resume = () => {
               </ul>
               <li>Group Project: Lystr</li>
               <ul>
-                <li>Currently scoping and designing wireframes for a client pro bono project. The platform is designed to connect owners of recreational vehicles to interested renters. Owners can list out their recreational vehicles and renters can search by location and date availability for vehicles they may be interested in renting. </li>
+                <li>
+                  Worked together in a team of 4 to scope, design and develop a full CRUD Single Page Application (SPA) for a client as a pro bono project.
+                </li>
+                <li>
+                  The application is designed to connect owners of recreational vehicles to interested renters. Owners can list out their recreational vehicles and renters can search by location and date availability for vehicles they may be interested in renting.
+                </li>
+                <li>
+                  Technologies used: Javascript, React, Node.js, Redux, Redux Saga, PostgreSQL, HTML, CSS, Express.js, Passport.js, Amazon Simple Storage Service (AWS S3) API, OpenCage Geocoding API, Leaflet.js, etc.
+                </li>
               </ul>
             </ul>
           </Typography>
