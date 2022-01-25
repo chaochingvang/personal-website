@@ -22,7 +22,7 @@ function App() {
         <CssBaseline />
         <Navbar />
         <Switch>
-            <Route exact path="/personal-website">
+            <Route exact path="/">
               <Home />
             </Route>
             {/* <Route exact path="/personal-website">
