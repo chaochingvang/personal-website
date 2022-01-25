@@ -1,4 +1,5 @@
 {
+  "homepage": "http://chaochingvang.github.io/personal-website",
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
@@ -23,6 +24,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -46,6 +49,7 @@
     "@iconify/icons-akar-icons": "^1.1.29",
     "@iconify/icons-ant-design": "^1.1.1",
     "@iconify/icons-bx": "^1.1.4",
-    "@iconify/react": "^3.1.0"
+    "@iconify/react": "^3.1.0",
+    "gh-pages": "^3.2.3"
   }
 }
