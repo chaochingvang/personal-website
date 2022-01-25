@@ -28,13 +28,13 @@ function App() {
             {/* <Route exact path="/personal-website">
               <Redirect to="/" />
             </Route> */}
-            <Route exact path="/resume">
+            <Route path="/resume">
               <Resume />
             </Route>
-            <Route exact path="/portfolio">
+            <Route path="/portfolio">
               <Portfolio />
             </Route>
-            <Route exact path="/skills">
+            <Route path="/skills">
               <Skills/>
             </Route>
             {/* <Route exact path="/contact">
