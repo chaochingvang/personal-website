@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import CssBaseline from "@mui/material/CssBaseline";
 import Home from "./components";
 import Resume from "./components/Resume";
@@ -22,8 +22,11 @@ function App() {
         <CssBaseline />
         <Navbar />
         <Switch>
-            <Route exact path="/personal-website">
+            <Route exact path="/">
               <Home />
+            </Route>
+            <Route exact path="/personal-website">
+              <Redirect to="/" />
             </Route>
             <Route exact path="/resume">
               <Resume />
